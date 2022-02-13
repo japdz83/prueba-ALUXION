@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Slider Product </title>
+
+    <link rel="stylesheet" href="./css/main.css" />
+</head>
+<body>
+    
+    <header>
+
+        <div class="container">
+            <nav class="navbar">
+                <div class="logo">
+                    <span >mater</span>
+                </div>
+                <a href="javascript:void(0)" id="btn" class="btn-menu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </a>
+                <div id="menu" class="menu-overlay ">
+                    <ul class="menu-list container">
+                        <li class="menu-item dropdown">
+                            <a class="menu-link" href="#">Collection</a>
+                            <ul>
+                              <li class="li1"><a href="#">Link 1</a></li>
+                              <li><a href="#">Link 2</a></li>
+                              <li><a href="#">Link 3</a></li>
+                              <div class=" img img-product"></div>
+                            </ul>
+                         </li>
+                        <li class="menu-item"><a class="menu-link" href="#">Design</a></li>
+                        <li class="menu-item"><a class="menu-link" href="#">Craftmanship</a></li>
+                        <li class="menu-item"><a class="menu-link" href="#">Ethics</a></li>
+                    </ul>
+                    <ul class="footer-menu-1 container">
+                        <li><a href="#">About</a></li>
+                        <li><a href="#">Contact</a></li>
+                        <li><a href="#">Dealers</a></li>
+                    </ul>
+                    <ul class="footer-menu-2 container">
+                        <li><a href="#">News</a></li>
+                        <li><a href="#">Care</a></li>
+                        <li><a href="#">Press</a></li>
+                    </ul>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <div class="container">
+
+            <div class="slideshow-container">
+
+                <div class="row mySlides fade">
+
+                    <div class="left-slide">
+                        <div class="text-content">
+                            <div class="text-autor">
+                                <p> Michael W.Dreeben </p>
+                            </div>
+                            <div class="title-article">
+                                <h2>Shell Dining Chair</h2>
+                            </div>
+                            <div class="text-description">
+                                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Neque alias nulla eos saepe, beatae officia animi perspiciatis optio nobis ut, explicabo ad ullam, ducimus laboriosam!</p>
+                            </div>
+                        </div>
+                    </div>
+    
+                    <div class="right-slide">
+                        <div class="img-content">
+                            <img src="./img/Silla negra.png" alt="Silla Negra">
+                        </div>
+                    </div>
+    
+                </div>
+    
+                <div class="row mySlides fade">
+    
+                    <div class="left-slide">
+                        <div class="text-content">
+                            <div class="text-autor">
+                                <p> Jeaper k.Thomas </p>
+                            </div>
+                            <div class="title-article">
+                                <h2>Dunes Anthrazite Black</h2>
+                            </div>
+                            <div class="text-description">
+                                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Neque alias nulla eos saepe, beatae officia animi perspiciatis optio nobis ut, explicabo ad ullam, ducimus laboriosam!</p>
+                            </div>
+                        </div>
+                    </div>
+    
+                    <div class="right-slide">
+                        <div class="img-content">
+                            <img src="./img/Mesa negra.png" alt="Mesa Negra">
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+
+            <button class="btn-datail">Product Details</button>
+            <div class="dot-container">
+                <span class="dot" onclick="currentSlide(1)">
+                    <p>01</p>
+                    <p>Shell Dining Chair</p>
+                </span> 
+                <span class="dot" onclick="currentSlide(2)">
+                    <p>02</p>
+                    <p>Dunes Anthrazite Black</p>
+                </span> 
+              </div>
+        </div>
+    </main>
+
+    
+   
+
+
+    <script src="./js/app.js" ></script>
+</body>
+</html>

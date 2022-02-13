@@ -1,0 +1,485 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+/*=================================================================
+    Estilos Generales
+==================================================================*/
+
+body{
+    font-family: 'Roboto', Arial, Helvetica, sans-serif;
+    background-color: #f2f2f2;  
+    line-height: 1.5;
+    color: #3a3a3a;
+    font-weight: 400;
+    font-size: 14px;
+    height: 100vh;
+    position: relative;
+}
+ol, ul, li{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+a {
+    color: #fff;
+    -webkit-transition: all .3s ease-in 0s;
+       -moz-transition: all .3s ease-in 0s;
+        -ms-transition: all .3s ease-in 0s;
+         -o-transition: all .3s ease-in 0s;
+            transition: all .3s ease-in 0s;
+    text-decoration: none;
+}
+.container {
+    margin: 0 auto;
+    max-width: 1280px;
+    width: 90%;
+}
+.row{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+@media only screen and (min-width: 601px) {
+    .container {
+        width: 85%;
+    }
+    .row{
+        flex-wrap: wrap;
+    }
+}
+@media only screen and (min-width: 993px) {
+    .container {
+        width: 70%;
+    }
+    .row{
+        flex-wrap: wrap;
+    }
+}
+.container .row {
+    margin-left: -0.75rem;
+    margin-right: -0.75rem;
+}
+/*=================================================================
+    Estilos Menu Overlay
+==================================================================*/
+header{
+    width: 100%;
+    height: 65px;
+}
+nav{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+nav .logo{
+    font-family: 'Times New Roman', Times, serif;
+    padding-top: 25px;
+    font-size: 25px;
+    font-weight: bold;
+    z-index: 2;
+}
+nav .btn-menu{
+    position: absolute;
+    top: 25px;
+    right: 15%;
+    z-index: 2;
+    display: flex;
+    width: 40px;
+    height: 40px;
+    border: 1px solid rgb(80, 80, 80);
+    padding-top: 15px;
+    padding-left: 8px;
+    padding-right: 8px;
+    padding-bottom: 10px;
+}
+@media screen and (max-width: 992px){
+    nav .btn-menu{
+        right: 8%;
+    }
+}
+@media screen and (max-width: 768px){
+    nav .btn-menu{
+        right: 5%;
+    }
+}
+nav .btn-menu span{
+    width: 20px;
+    height: 0.5px !important;
+    background-color: #000;
+    display: flex;
+    position: absolute;
+    transition: .3s ease all;
+}
+nav .btn-menu span:nth-child(1){
+    top: 20%;
+
+}
+nav .btn-menu span:nth-child(2){
+    width: 12px;
+    top: 40%;
+}
+nav .btn-menu span:nth-child(3){
+    right: 8px;
+    width: 8px;
+    top: 60%;
+}
+nav .btn-menu.is-active span{
+    background: #fff;
+    border: 1px solid #fff;
+}
+nav .logo.is-active{
+    color: #fff;
+}
+.btn-menu.is-active span:nth-child(1){
+    top: 50%;
+    transform: rotate(-45deg);
+}
+.btn-menu.is-active span:nth-child(2){
+    top: 40%;
+    width: 10px;
+    transform: rotate(45deg);
+}
+.btn-menu.is-active span:nth-child(3){
+    top: 67%;
+    right:10px;
+    width: 6px;
+    transform: rotate(45deg);
+}
+.menu-overlay{
+    background-color: #000;
+    display: flex;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    left: 100%;
+    right: 0;
+    bottom: 0;
+    z-index: 1;
+    overflow: hidden;
+    width: 0;
+    height: 100%;
+    transition: .8s ease ;
+}
+
+.menu-overlay.is-active {
+    width: 100%;
+    left: 0;
+}
+.menu-list{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    bottom: -50%;
+    opacity: 0;
+    transition: .2s ease;
+}
+.menu-list.is-active{
+    bottom: 10%;
+    opacity: 1;
+    transition: 1.8s ease all;
+}
+.menu-item:not(:last-child){
+    margin-bottom: 30px;
+}
+.menu-item{
+    position: relative;
+    display: inline-flex;
+}
+.menu-item .menu-link{
+    font-weight: normal;
+    font-size: 30px;
+    color: #fff;
+}
+/*=================================================================
+    Estilos Btn Dropdown
+==================================================================*/
+nav.navbar ul li.dropdown{
+	position:relative;
+}
+nav.navbar ul li ul{
+    position: relative;
+    top: 50px;
+    left: -10%;
+    opacity: 0;
+    width: 100%;
+    z-index: 6;
+    transition: opacity 0.5s ease;
+    margin-bottom: 20px;
+    margin-top: 20px;
+}
+nav.navbar ul li ul li{
+	display:block;
+	height:0px;
+	overflow:hidden;
+	transition:height 0.5s ease;
+}
+nav.navbar ul li.dropdown:hover ul{
+	opacity:1;
+}
+nav.navbar ul li.dropdown:hover li{
+	overflow:visible;
+	height:60px;
+}
+@media screen and (max-width: 1200px){
+    nav.navbar ul li ul{
+        left: -20%;
+        
+    }
+}
+@media screen and (max-width: 768px){
+    nav.navbar ul li ul{
+        left: -25%;
+        
+    }
+}
+@media screen and (max-width: 450px){
+    nav.navbar ul li ul{
+        left: -35%;
+        
+    }
+}
+/*=================================================================
+    Estilos Img Product
+==================================================================*/
+.img{
+    position: absolute;
+    width: 500px;
+    height: 500px;
+    filter: grayscale(1);
+    mix-blend-mode: difference;
+}
+.img-product{
+    top: 0;
+    left: 50%;
+    background: url(../img/Sofá\ blanco.png) no-repeat 50% 50%;
+    background-size: contain;
+    opacity: 0;
+    transform: translateY(50%);
+    transition: 1s ease-in-out;
+}
+.li1:hover ~ .img-product{
+    opacity: 1;
+    transform: translateY(0%);
+    transition: 1s ease-in-out;
+}
+@media screen and (max-width: 1200px){
+    .img-product{
+        display: none !important;
+    }
+}
+/*=================================================================
+    Estilos Menu Footer
+==================================================================*/
+.footer-menu-1{
+    position: absolute;
+    width: 100%;
+    left: 15%;
+    display: flex;
+    flex-wrap: wrap;
+    bottom: -50%;
+    opacity: 0;
+}
+.footer-menu-1 li{
+    margin-right: 25px;
+    font-size: 12px;
+}
+.footer-menu-1 li a{
+    color: #414141;
+}
+.footer-menu-1.is-active{
+    font-size: 12px;
+    bottom: 15%;
+    opacity: 1;
+    transition: 1.8s ease all;
+}
+
+.footer-menu-2{
+    position: absolute;
+    width: 100%;
+    left: 15%;
+    display: flex;
+    flex-wrap: wrap;
+    bottom: -50%;
+    opacity: 0;
+}
+.footer-menu-2 li{
+    margin-right: 25px;
+    font-size: 12px;
+}
+.footer-menu-2 li a{
+    color: #414141;
+}
+.footer-menu-2.is-active{
+    font-size: 12px;
+    bottom: 10%;
+    opacity: 1;
+    transition: 1.8s ease all;
+}
+
+/*=================================================================
+    Estilos Contenido del Sitio
+==================================================================*/
+
+.btn-datail{
+    background-color: #000;
+    color: #fff;
+    padding: 15px;
+    position: absolute;
+    border: none;
+    top: 60%;
+    left:15%;
+}
+.mySlides {display: flex;}
+img {vertical-align: middle;}
+
+/* Slideshow container */
+.slideshow-container {
+    position: relative;
+    margin-top: 2%;
+    width: 100%;
+}
+.dot-container{
+    position: relative;
+    margin-top: 12%;
+}
+.dot {
+    cursor: pointer;
+    height: 2px;
+    width: 150px;
+    margin: 0 2px;
+    background-color: #bbb;
+    border-radius: 50%;
+    display: inline-block;
+    transition: background-color 0.6s ease;
+}
+.dot p{
+    margin-top: 10px;
+}
+
+.active, .dot:hover {
+    background-color: #000;
+    color: #000;
+}
+.fade {
+    -webkit-animation-name: fade;
+    -webkit-animation-duration: 1.5s;
+    animation-name: fade;
+    animation-duration: 1.5s;
+}
+
+@-webkit-keyframes fade {
+    from {opacity: .4} 
+    to {opacity: 1}
+}
+
+@keyframes fade {
+    from {opacity: .4} 
+    to {opacity: 1}
+}
+.left-slide{
+    top:10%;
+    width: 50%;
+}
+.left-slide .text-content{
+    padding: 15px;
+}
+.left-slide .text-content .text-autor{
+    margin-bottom: 20px;
+}
+.left-slide .text-content .text-autor p{
+    color: #212121;
+    font-size: 14px;
+}
+.left-slide .text-content .title-article {
+    color: #000;
+    margin-bottom: 20px;
+}
+.left-slide .text-content .text-description{
+    color: #212121;
+    margin-bottom: 20px;
+    padding-right: 50px;
+}
+.right-slide{
+    top:10%;
+    width: 50%;
+}
+@media screen and (max-width: 1200px){
+    .mySlides {
+        display: flex;
+        flex-wrap: wrap;
+    }
+    .left-slide{
+        width: 100%;
+    }
+    .right-slide{
+        width: 100%;
+    }
+    .right-slide .img-content img{
+        position: relative;
+        left: 15%;
+        width: 80%;
+        margin-top: 10%;
+    }
+    .btn-datail{
+        position: absolute;
+        top: 25%;
+        left:8%;
+    }
+
+}
+@media screen and (max-width: 768px){
+    .mySlides {
+        display: flex;
+        flex-wrap: wrap;
+    }
+    .left-slide{
+        width: 100%;
+    }
+    .right-slide{
+        width: 100%;
+    }
+    .right-slide .img-content img{
+        position: relative;
+        left: 15%;
+        width: 60%;
+        margin-top: 10%;
+    }
+    .btn-datail{
+        position: absolute;
+        top: 30%;
+        left:8%;
+    }
+}
+@media screen and (max-width: 450px){
+    .mySlides {
+        display: flex;
+        flex-wrap: wrap;
+    }
+    .left-slide{
+        width: 100%;
+    }
+    .right-slide{
+        width: 100%;
+    }
+    .right-slide .img-content img{
+        position: relative;
+        left: 15%;
+        width: 70%;
+        margin-top: 25%;
+    }
+    .btn-datail{
+        position: absolute;
+        top: 40%;
+        left:8%;
+    }
+    .dot-container{
+        position: relative;
+        margin-top: 20%;
+    }
+}
+
+
